@@ -1,11 +1,11 @@
 from django.urls import path
-from recipes.views import home, contato, sobre
+# temos que importar as funções do file "views.py"
+from recipes.views import home
 
 
 
-
+# São requisições HTTP que aparecem na barra de pesquisa
 urlpatterns = [
+    # "PATH" são caminhos que chamam funções que estão no file "views.py"
     path('', home),
-    path('contato/', contato),
-    path('sobre/', sobre),
 ]
