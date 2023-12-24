@@ -1,15 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
 # Create your views here.
+
+# "Views" são funções que são chamadas pelos "paths", retornam caminhos de templates
+# Os templates são codigos HTML 
 def home(request):
-    return HttpResponse('HOME 2')
-
-
-
-def contato(request):
-    return HttpResponse('CONTATO')
-
-
-def sobre(request):
-    return HttpResponse('SOBRE')
+    return render(request, 'recipes/home.html', status="404", context={
+        "name": "Luis Salas"
+    })
