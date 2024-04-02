@@ -9,6 +9,6 @@ def home(request):
     })
 
 def recipe(request, id):
-    return render(request, 'recipes/pages/home.html', status="404", context={
+    return render(request, 'recipes/pages/recipe-view.html', status="404", context={
         "name": "Luis Salas"
     })

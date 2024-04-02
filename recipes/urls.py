@@ -8,5 +8,5 @@ from . import views
 urlpatterns = [
     # "PATH" são caminhos que chamam funções que estão no file "views.py"
     path('', views.home),
-    path('recipe/<int:id>', views.recipe),
+    path('recipes/<int:id>/', views.recipe),
 ]
