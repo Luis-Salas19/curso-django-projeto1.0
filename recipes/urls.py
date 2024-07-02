@@ -8,5 +8,6 @@ app_name = 'recipes'
 urlpatterns = [
     # "PATH" são caminhos que chamam funções que estão no file "views.py"
     path('', views.home, name="home"),
+    path('recipes/category/<int:category_id>/', views.category, name="category"),
     path('recipes/<int:id>/', views.recipe, name="recipe"),
 ]
