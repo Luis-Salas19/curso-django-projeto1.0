@@ -7,7 +7,7 @@ from .models import Recipe
 # Os templates são codigos HTML 
 def home(request):
     # busca todas as receitas, e ordena por 'id'
-    recipes = Recipe.objects.all().order_by('id')
+    recipes = Recipe.objects.all().order_by('id') #você está buscando todos os objetos da classe Recipe no banco de dados, ordenando por 'id'
     return render(request, 'recipes/pages/home.html', status="404", context={
         "recipes": recipes,
     })
@@ -15,9 +15,9 @@ def home(request):
 
 def category(request, category_id):
     # busca todas as receitas, e ordena por 'id'
-    recipes = Recipe.objects.filter(category__id=category_id).order_by('id')
-    return render(request, 'recipes/pages/home.html', status="404", context={
-        "recipes": recipes,
+    recipes = Recipe.objects.filter(category__id=category_id, is_published=True).order_by('id')
+    return render(request, 'recipes/pages/category.html', status="404", context={
+        "recipes": recipes, #O contexto passado para o template inclui a variável recipes, que contém os objetos recuperados do banco de dados
     })
 
 
